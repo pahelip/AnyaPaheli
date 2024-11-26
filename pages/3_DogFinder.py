@@ -15,13 +15,13 @@ dog_data = fetch_dog_data()
 
 st.header("**Dog of the Day**")
 
-if "dog_data" not in st.session_state:
+if "dog_data" not in st.session_state: #NEW
     st.session_state["dog_data"] = fetch_dog_data()
 
 dog_data = st.session_state["dog_data"]
 st.image(dog_data["url"], caption="Dog of the Day")
 
-if st.button("Fetch New Dog"):
+if st.button("Fetch New Dog"): #NEW
     st.session_state["dog_data"] = fetch_dog_data()
 
 info_choice = st.radio("Select the information you want to see!", ["Breed", "Size", "Temperament"])
@@ -42,4 +42,4 @@ elif info_choice == "Temperament":
     else:
         st.write("Depends on the day! The dog can be playful or moody...")
 else:
-    st.error("Could not fetch data. Try again later.")
+    st.error("Could not fetch data. Try again later.") #NEW
