@@ -22,9 +22,6 @@ if "dog_data" not in st.session_state: #NEW
 
 
 
-if st.button("Fetch New Dog"): #NEW
-    st.session_state["dog_data"] = fetch_dog_data(limit = num)
-
 dog_data = st.session_state["dog_data"]
 info_choice = st.radio("Select the information you want to see!", ["Breed", "Size", "Temperament"])
 
@@ -39,5 +36,8 @@ for dogType in dog_data:
             st.write("Temperament: ", dogType["breeds"][0]["temperament"])
     else:
         st.error("Could not fetch data. Try again later.") #NEW
+
+    if st.button("Fetch New Dog"): #NEW
+    st.session_state["dog_data"] = fetch_dog_data(limit = num)
         
 
