@@ -38,7 +38,8 @@ experience_data = {
 
 projects_data = {
     "Iron Man Suit": "Created the famous Iron Man suit in a cave and built upgraded new models with different skills since",
-    "Time Travel": "Figured out how to acquire the Infinity Stones from different points in time by using the quantum realm"
+    "Time Travel": "Figured out how to acquire the Infinity Stones from different points in time by using the quantum realm",
+    "Dog Finder App": "Created an app which uses a dog API and takes an input of the number of pictures to find a dog's breed, size, temperament, and pictures"
 }
 
 programming_data = {
