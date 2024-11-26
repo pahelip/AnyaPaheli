@@ -3,7 +3,7 @@ import requests
 API_URL = "https://api.thedogapi.com/v1/images/search"
 API_KEY = "live_bvXwtUCuseTj0LLHnlsUcvprBx0d0tn43fChCbza0AJ9DYnR4Xb6TYRuDRXKd4RE"
 
-def fetch_dog_data():
+def fetch_dog_data(limit = 1):
     params = {"limit": 1,"api_key": API_KEY}
     response = requests.get(API_URL, params=params)
     return response.json()[0]
@@ -14,6 +14,8 @@ import streamlit as st
 dog_data = fetch_dog_data()
 
 st.header("**Dog of the Day**")
+
+num = st.slider("Number of dogs:", mini = 1, maxi = 10, value = 1)
 
 if "dog_data" not in st.session_state: #NEW
     st.session_state["dog_data"] = fetch_dog_data()
