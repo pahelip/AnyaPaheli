@@ -40,7 +40,7 @@ for dogType in dog_data:
 info_choice = st.radio("Select the information you want to see!", ["Breed", "Size", "Temperament"])
 
 if info_choice == "Breed":
-    if dog_data["breeds"]:
+    if dogType["breeds"]:
         st.write("Breed: ", dog_data["breeds"][0]["name"])
     else:
         st.write("We aren't sure... But if you see this dog, be sure to ask!")
