@@ -11,7 +11,6 @@ st.subheader("Team 22, Web Development - Section B")
 st.subheader("Anya Chaganti, Paheli Patel")
 st.image("Images/homepage.jpeg")
 
-
 # Introduction
 # TODO: Write a quick description for all of your pages in this lab below, in the form:
 #       1. **Page Name**: Description
@@ -23,7 +22,7 @@ st.write("""Welcome to our Streamlit Web Development Lab03 app! You can navigate
 
 st.write("""1. **Peter Parker's Portfolio**: An online portfolio of Peter Parker's professional and heroic experience.""")
 st.write("""2. **Tony Stark's Portfolio**: An online portfolio of Tony Stark's professional and heroic experience.""")
-st.write("""3. **Page**: Description""")
+st.write("""3. **Dog Finder**: """)
 st.write("""4. **Page**: Description""")
 
 
