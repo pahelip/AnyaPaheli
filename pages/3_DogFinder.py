@@ -6,7 +6,7 @@ API_KEY = "live_bvXwtUCuseTj0LLHnlsUcvprBx0d0tn43fChCbza0AJ9DYnR4Xb6TYRuDRXKd4RE
 def fetch_dog_data(limit = 1):
     params = {"limit": limit,"api_key": API_KEY}
     response = requests.get(API_URL, params=params)
-    return response.json()[0]
+    return response.json()
 
 
 import streamlit as st
