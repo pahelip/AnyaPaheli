@@ -41,17 +41,17 @@ info_choice = st.radio("Select the information you want to see!", ["Breed", "Siz
 
 if info_choice == "Breed":
     if dogType["breeds"]:
-        st.write("Breed: ", dog_data["breeds"][0]["name"])
+        st.write("Breed: ", dogType["breeds"][0]["name"])
     else:
         st.write("We aren't sure... But if you see this dog, be sure to ask!")
 elif info_choice == "Size":
     if dogType["breeds"]:
-        st.write("Size: ", dog_data["breeds"][0]["weight"]["imperial"])
+        st.write("Size: ", dogType["breeds"][0]["weight"]["imperial"])
     else:
         st.write("Depends on the dog! Can be small, big, or giant!")
 elif info_choice == "Temperament":
     if dogType["breeds"]:
-        st.write("Temperament: ", dog_data["breeds"][0]["temperament"])
+        st.write("Temperament: ", dogType["breeds"][0]["temperament"])
     else:
         st.write("Depends on the day! The dog can be playful or moody...")
 else:
