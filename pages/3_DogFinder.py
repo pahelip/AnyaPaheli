@@ -38,6 +38,6 @@ for dogType in dog_data:
         st.error("Could not fetch data. Try again later.") #NEW
 
     if st.button("Fetch New Dog"): #NEW
-    st.session_state["dog_data"] = fetch_dog_data(limit = num)
+        st.session_state["dog_data"] = fetch_dog_data(limit = num)
         
 
