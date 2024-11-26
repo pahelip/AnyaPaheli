@@ -29,9 +29,9 @@ dog_data = st.session_state["dog_data"]
 for dogType in dog_data:
     st.image(dog_data["url"], caption="Dog of the Day")
     if "breeds" in dogType and dogType["breeds"]:
-        st.write("Breed", dogType["breeds"[0]["name"])
-        st.write("Size", dogType["breeds"[0]["weight"]["imperial"])
-        st.write("Temperament", dogType["breeds"[0]["temperament"])
+        st.write("Breed: ", dogType["breeds"][0]["name"])
+        st.write("Size: ", dogType["breeds"][0]["weight"]["imperial"])
+        st.write("Temperament: ", dogType["breeds"][0]["temperament"])
     else:
         st.write("No info on this breed.")
         
