@@ -26,9 +26,10 @@ if st.button("Fetch New Dog"): #NEW
     st.session_state["dog_data"] = fetch_dog_data(limit = num)
 
 dog_data = st.session_state["dog_data"]
+info_choice = st.radio("Select the information you want to see!", ["Breed", "Size", "Temperament"])
+
 for dogType in dog_data:
     st.image(dogType["url"], caption="Dog of the Day")
-    info_choice = st.radio("Select the information you want to see!", ["Breed", "Size", "Temperament"])
     if "breeds" in dogType and dogType["breeds"]:
         if info_choice == "Breed":
             st.write("Breed: ", dogType["breeds"][0]["name"])   
