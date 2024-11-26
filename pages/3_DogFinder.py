@@ -18,12 +18,12 @@ st.header("**Dog of the Day**")
 num = st.slider("Number of dogs:", min_value =  1, max_value = 10, value = 1)
 
 if "dog_data" not in st.session_state: #NEW
-    st.session_state["dog_data"] = fetch_dog_data(limit = num)
+    st.session_state["dog_data"] = fetch_dog_data()
 
 
 
 if st.button("Fetch New Dog"): #NEW
-    st.session_state["dog_data"] = fetch_dog_data(limit = num)
+    st.session_state["dog_data"] = fetch_dog_data()
 
 dog_data = st.session_state["dog_data"]
 for dogType in dog_data:
