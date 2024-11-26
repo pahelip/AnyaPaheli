@@ -1,7 +1,8 @@
+import random
 import google.generativeai as genai
 import os
 import streamlit as st
-import random
+
 
 key = st.secrets["key"]
 genai.configure(api_key = key)
@@ -44,11 +45,11 @@ if first and second:
         if winner:
             st.write(f"{winner} is larger in size.")
         else:
-            st.write(f"Both {one} and {two} are equal in size")
+            st.write(f"Both {first} and {second} are equal in size!")
 
     else:
         st.error("Results are not available for these breeds.")
-        
+
 
 model = genai.GenerativeModel("gemini-1.5-flash") #this is the free model of google gemini
 response = model.generate_content("Write a story about these two dog breeds.") #enter your prompt here!
