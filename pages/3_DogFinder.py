@@ -25,6 +25,8 @@ st.image(dog_data["url"], caption="Dog of the Day")
 
 if st.button("Fetch New Dog"): #NEW
     numDogs = fetch_dog_data(limit = num)
+    for dogType in numDogs:
+        st.image(dogType["url"])
     st.session_state["dog_data"] = fetch_dog_data()
 
 info_choice = st.radio("Select the information you want to see!", ["Breed", "Size", "Temperament"])
