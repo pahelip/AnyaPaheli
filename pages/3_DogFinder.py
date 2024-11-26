@@ -45,12 +45,12 @@ if info_choice == "Breed":
     else:
         st.write("We aren't sure... But if you see this dog, be sure to ask!")
 elif info_choice == "Size":
-    if dog_data["breeds"]:
+    if dogType["breeds"]:
         st.write("Size: ", dog_data["breeds"][0]["weight"]["imperial"])
     else:
         st.write("Depends on the dog! Can be small, big, or giant!")
 elif info_choice == "Temperament":
-    if dog_data["breeds"]:
+    if dogType["breeds"]:
         st.write("Temperament: ", dog_data["breeds"][0]["temperament"])
     else:
         st.write("Depends on the day! The dog can be playful or moody...")
