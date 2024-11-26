@@ -15,7 +15,7 @@ dog_data = fetch_dog_data()
 
 st.header("**Dog of the Day**")
 
-num = st.slider("Number of dogs:", mini = 1, maxi = 10, value = 1)
+num = st.slider("Number of dogs:", min_value =  1, max_value = 10, value = 1)
 
 if "dog_data" not in st.session_state: #NEW
     st.session_state["dog_data"] = fetch_dog_data()
@@ -24,6 +24,7 @@ dog_data = st.session_state["dog_data"]
 st.image(dog_data["url"], caption="Dog of the Day")
 
 if st.button("Fetch New Dog"): #NEW
+    numDogs = fetch_dog_data(limit = num)
     st.session_state["dog_data"] = fetch_dog_data()
 
 info_choice = st.radio("Select the information you want to see!", ["Breed", "Size", "Temperament"])
