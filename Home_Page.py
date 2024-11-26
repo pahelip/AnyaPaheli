@@ -20,9 +20,9 @@ st.image("Images/homepage.jpeg")
 
 st.write("""Welcome to our Streamlit Web Development Lab03 app! You can navigate between the pages using the sidebar to the left. The following pages are:""")
 
-st.write("""1. **1_Peter Parker's Portfolio**: An online portfolio of Peter Parker's professional and heroic experience.""")
-st.write("""2. **2_Tony Stark's Portfolio**: An online portfolio of Tony Stark's professional and heroic experience.""")
-st.write("""3. **3_Dog Finder**: Page that uses a dog API to find a dog's breed, size, temperament, and picture.""")
+st.write("""1. **Peter Parker's Portfolio**: An online portfolio of Peter Parker's professional and heroic experience.""")
+st.write("""2. **Tony Stark's Portfolio**: An online portfolio of Tony Stark's professional and heroic experience.""")
+st.write("""3. **Dog Finder**: Page that uses a dog API to find a dog's breed, size, temperament, and picture.""")
 st.write("""4. **Page**: Description""")
 
 
