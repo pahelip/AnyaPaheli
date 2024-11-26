@@ -29,14 +29,17 @@ dog_data = st.session_state["dog_data"]
 for dogType in dog_data:
     st.image(dogType["url"], caption="Dog of the Day")
     if "breeds" in dogType and dogType["breeds"]:
-        st.write("Breed: ", dogType["breeds"][0]["name"])
-        st.write("Size: ", dogType["breeds"][0]["weight"]["imperial"])
-        st.write("Temperament: ", dogType["breeds"][0]["temperament"])
+        if info_choice == "Breed":
+            st.write("Breed: ", dogType["breeds"][0]["name"])   
+        elif info_choice == "Size":
+            st.write("Size: ", dogType["breeds"][0]["weight"]["imperial"])  
+        elif info_choice == "Temperament":
+            st.write("Temperament: ", dogType["breeds"][0]["temperament"])
     else:
-        st.write("No info on this breed.")
+        st.error("Could not fetch data. Try again later.") #NEW
         
 
-
+"""
 info_choice = st.radio("Select the information you want to see!", ["Breed", "Size", "Temperament"])
 
 if info_choice == "Breed":
@@ -56,3 +59,4 @@ elif info_choice == "Temperament":
         st.write("Depends on the day! The dog can be playful or moody...")
 else:
     st.error("Could not fetch data. Try again later.") #NEW
+"""
