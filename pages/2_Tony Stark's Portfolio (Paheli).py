@@ -96,7 +96,7 @@ def activities_section(leadership_data, activity_data):
         st.subheader("Community Service")
         for title, details in activity_data.items():
             expander=st.expander(f"{title}")
-            for bullets in details:
+            for bullet in details:
                 expander.write(bullet)
     st.write("---")
 
