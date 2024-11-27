@@ -50,13 +50,10 @@ comparison_data = (f"Compare these two dog breeds:\n\n"
     f"Breed 2:\n{format(breed2)}")
 
 def generate(prompt):
-    try:
-        model = genai.GenerativeModel("gemini-1.5-flash")
-        response=model.generate_content(prompt)
-        content = response._result.candidates[0].content.parts[0].text
-        return content
-    except:
-        return None
+    model = genai.GenerativeModel("gemini-1.5-flash")
+    response=model.generate_content(prompt)
+    content = response._result.candidates[0].content.parts[0].text
+    return content
 
 st.write(generate(f"{comparison_data}\n\n\Provide a detailed comparison of these two breeds."))
 
