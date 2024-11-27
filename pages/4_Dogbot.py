@@ -7,6 +7,9 @@ import streamlit as st
 key = st.secrets["key"]
 genai.configure(api_key = key)
 
+st.header("Hi! I am Dogbot")
+st.subheader("I am here to help you find information about different dog breeds. Please enter the relevant information in the boxes below.")
+
 first = st.text_input("Enter your first dog breed:")
 second = st.text_input("Enter your second dog breed:")
 
