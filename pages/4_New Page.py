@@ -28,7 +28,8 @@ first = st.text_input("Enter your first dog breed:")
 second = st.text_input("Enter your second dog breed:")
 
 if st.button("Random dog"):
-    random_breed = random.choices(["Bluetick Coonhound", "African Hunting Dog", "Australian Cattle Dog", "Kooikerhondje", "Saint Bernard", "Mastiff", "Bearded Collie", "Irish Terrier", "Pomeranian", "Finnish Spitz"])
+    first,second = random.sample(list(breedData.keys()),2)
+    st.write(f"The randomly selected dogs are: {first}, {second}")
 if first and second:
     if first in breedData and second in breedData:
         one = breedData[first]
@@ -36,9 +37,9 @@ if first and second:
         sizeOne = size[one["size"]]
         sizeTwo = size[two["size"]]
         if sizeOne > sizeTwo:
-            winner = one
+            winner = first
         elif sizeTwo > sizeOne:
-            winner = two
+            winner = second
         else:
             winner = None
         st.write("Results:")
