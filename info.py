@@ -71,6 +71,6 @@ leadership_data = {
     "CEO of Stark Industries": (["- Helped with US defense strategies and futuristic technology designs"],"Images/hand.jpeg")
 }
 activity_data={
-    "Maria Stark Foundation": ["- Created to honor my mother", 
-            "- Donated profits from Stark Industries to support the foundation"]
+    "Maria Stark Foundation": (["- Created to honor my mother", 
+            "- Donated profits from Stark Industries to support the foundation"])
 }
