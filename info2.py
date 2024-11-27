@@ -41,6 +41,7 @@ experience_data = {
 
 projects_data = {
     "Web-Shooters": "Created wrist devices that shoot web fluid.",
+    "Dog Finder App": "Created an app which uses a dog API and takes an input of the number of pictures to find a dog's breed, size, temperament, and pictures"
 }
 
 programming_data = {
