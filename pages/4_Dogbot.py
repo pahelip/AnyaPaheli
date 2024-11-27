@@ -44,32 +44,16 @@ def format(breed):
 breed1=getDogData(first)
 breed2=getDogData(second)
 
+if breed1 and breed2:
+    comparison_data = (f"Compare these two dog breeds:\n\n"
+                        f"Breed 1:\n{format(breed1)}\n\n"
+                        f"Breed 2:\n{format(breed2)}")
+    st.write(comparison_data)
 
-comparison_data = (f"Compare these two dog breeds:\n\n"
-    f"Breed 1:\n{format(breed1)}\n\n"
-    f"Breed 2:\n{format(breed2)}")
-
-def generate(prompt):
-    model = genai.GenerativeModel("gemini-1.5-flash")
-    response=model.generate_content(prompt)
-    content = response._result.candidates[0].content.parts[0].text
-    return content
+    def generate(prompt):
+        model = genai.GenerativeModel("gemini-1.5-flash")
+        response=model.generate_content(prompt)
+        content = response._result.candidates[0].content.parts[0].text
+        return content
 
 st.write(generate(f"{comparison_data}\n\nProvide a detailed comparison of these two breeds."))
-
-st.subheader("Dogbot here to answer anymore questions.")
-
-question = st.text_input("Ask me a question about the dog breeds!")
-
-def chatbot(question):
-    if not question.strip():
-        return None
-    
-    model = genai.GenerativeModel("gemini-1.5-flash")
-    try:
-        response=model.generate_content(question)
-        content=response._result.candidates[0].content.parts[0].text
-        return content
-    except:
-        st.write("Please ask me a question.")
-st.write(generate(question))
