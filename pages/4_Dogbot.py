@@ -60,8 +60,10 @@ question = st.text_input("Ask me a question about the dog breeds!")
 
 def chatbot(question):
     model = genai.GenerativeModel("gemini-1.5-flash")
-    response=model.generate_content(question)
-    content=response._result.candidates[0].content.parts[0].text
-    return content
-
+    try:
+        response=model.generate_content(question)
+        content=response._result.candidates[0].content.parts[0].text
+        return content
+    except:
+        st.write("Please ask me a question.")
 st.write(generate(question))
