@@ -14,7 +14,7 @@ email_image_url = "https://logowik.com/content/uploads/images/513_email.jpg"
 #CHANGE BELOW
 my_linkedin_url = "https://www.linkedin.com/in/spongebob-squarepants-44b857281/"
 my_github_url = "https://github.com/spongebob-squarepants"
-my_email_address = "tonystark@avengers.com"
+my_email_address = "tonystark@gmail.com"
 
 
 education_data ={
