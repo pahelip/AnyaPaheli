@@ -59,3 +59,18 @@ if breed1 and breed2:
     st.write(generate(f"{comparison_data}\n\nProvide a detailed comparison of these two breeds."))
 else:
     st.write("Please enter valid breed names to compare.")
+
+st.subheader("Here to answer more questions!")
+
+question=st.text_input("Ask me more questions about the dog breeds!")
+
+def chatbot(question):
+    if not question.strip():
+        return "Please ask a valid question."
+    model = genai.GenerativeModel("gemini-1.5-flash")
+    try:
+        response=model.generate_content(question)
+        content = response._result.candidates[0].content.parts[0].text
+        return content
+    except:
+        return "Please ask a valid question."
