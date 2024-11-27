@@ -20,7 +20,7 @@ def links_section():
     github_link = f'<a href="{info.my_github_url}"><img src="{info.github_image_url}" alt = "Github" width="65" height="65"></a>'
     st.sidebar.markdown(github_link, unsafe_allow_html=True)
     st.sidebar.text("Or email me!")
-    email_html = f'<a href = "mailto:(info.my_email_address)"><img src="(info.email_image_url)" alt = "Email" width ="75" height ="75"></a>'
+    email_html = f'<a href ="mailto:{info.my_email_address}"><img src = "{info.email_image_url}" alt = "Email" width = "75" height = "75"></a>'
     st.sidebar.markdown(email_html, unsafe_allow_html=True)
 links_section()
 
