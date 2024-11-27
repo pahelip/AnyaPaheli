@@ -41,15 +41,40 @@ def format(breed):
 breed1=getDogData(first)
 breed2=getDogData(second)
 
+if breed1 and breed2:
+    comparison_data = (f"Compare these two dog breeds:\n\n"
+                        f"Breed 1:\n{format(breed1)}\n\n"
+                        f"Breed 2:\n{format(breed2)}")
+    st.write(comparison_data)
 
-comparison_data = (f"Compare these two dog breeds:\n\n"
-    f"Breed 1:\n{format(breed1)}\n\n"
-    f"Breed 2:\n{format(breed2)}")
+    def generate(prompt):
+        model = genai.GenerativeModel("gemini-1.5-flash")
+        response=model.generate_content(prompt)
+        content = response._result.candidates[0].content.parts[0].text
+        return content
 
-def generate(prompt):
-    model = genai.GenerativeModel("gemini-1.5-flash")
-    response=model.generate_content(prompt)
-    content = response._result.candidates[0].content.parts[0].text
-    return content
+    st.write(generate(f"{comparison_data}\n\n\Provide a detailed comparison of these two breeds."))
 
-st.write(generate(f"{comparison_data}\n\n\Provide a detailed comparison of these two breeds."))
+    st.header("Dogbot here to answer anymore questions.")
+    question = st.text_input("Ask me a question about the dog breeds!")
+
+    if st.button("Ask Dogbot"):
+        context = f"""
+        Breed 1: {format(breed1)}
+        Breed 2: {format(breed2)}
+        """
+
+        prompt = f"""
+        context: {context}
+        question: {question}
+        """
+
+        response = generate(prompt)
+        st.write("Response:")
+        st.write(response)
+else:
+    if first and not breed1:
+        st.error(f"No data found for {first}.")
+    if second and not breed2:
+        st.error(f"No data found for {second}.")
+        
