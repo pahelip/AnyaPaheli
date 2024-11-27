@@ -55,7 +55,7 @@ def generate(prompt):
     content = response._result.candidates[0].content.parts[0].text
     return content
 
-st.write(generate(f"{comparison_data}\n\n\Provide a detailed comparison of these two breeds."))
+st.write(generate(f"{comparison_data}\n\nProvide a detailed comparison of these two breeds."))
 
 st.subheader("Dogbot here to answer anymore questions.")
 
