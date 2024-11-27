@@ -53,3 +53,15 @@ def generate(prompt):
     return content
 
 st.write(generate(f"{comparison_data}\n\n\Provide a detailed comparison of these two breeds."))
+
+st.subheader("Dogbot here to answer anymore questions.")
+
+question = st.text_input("Ask me a question about the dog breeds!")
+
+def chatbot(question):
+    model = genai.GenerativeModel("gemini-1.5-flash")
+    response=model.generate_content(question)
+    content=response._result.candidates[0].content.parts[0].text
+    return content
+
+st.write(generate(question))
