@@ -48,7 +48,6 @@ if breed1 and breed2:
     comparison_data = (f"Compare these two dog breeds:\n\n"
                         f"Breed 1:\n{format(breed1)}\n\n"
                         f"Breed 2:\n{format(breed2)}")
-    st.write(comparison_data)
 
     def generate(prompt):
         model = genai.GenerativeModel("gemini-1.5-flash")
