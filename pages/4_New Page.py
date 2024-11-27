@@ -54,7 +54,8 @@ def generate(prompt):
     content = response._result.candidates[0].content.parts[0].text
     return content
 
-st.write(generate(f"{comparison_data}\n\n\Provide a detailed comparison of these two breeds."))import random
+st.write(generate(f"{comparison_data}\n\n\Provide a detailed comparison of these two breeds."))
+import random
 import google.generativeai as genai
 import os
 import streamlit as st
