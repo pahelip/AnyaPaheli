@@ -59,6 +59,8 @@ st.subheader("Dogbot here to answer anymore questions.")
 question = st.text_input("Ask me a question about the dog breeds!")
 
 def chatbot(question):
+    if not question.strip():
+        return "Please ask me a question."
     model = genai.GenerativeModel("gemini-1.5-flash")
     try:
         response=model.generate_content(question)
