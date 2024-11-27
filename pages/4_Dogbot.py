@@ -7,6 +7,9 @@ import streamlit as st
 key = st.secrets["key"]
 genai.configure(api_key = key)
 
+st.header("Hi! I am Dogbot")
+st.subheader("I am here to help you find information about different dog breeds. Please enter the relevant information in the boxes below.")
+
 first = st.text_input("Enter your first dog breed:")
 second = st.text_input("Enter your second dog breed:")
 
@@ -53,28 +56,4 @@ if breed1 and breed2:
         content = response._result.candidates[0].content.parts[0].text
         return content
 
-    st.write(generate(f"{comparison_data}\n\n\Provide a detailed comparison of these two breeds."))
-
-    st.header("Dogbot here to answer anymore questions.")
-    question = st.text_input("Ask me a question about the dog breeds!")
-
-    if st.button("Ask Dogbot"):
-        context = f"""
-        Breed 1: {format(breed1)}
-        Breed 2: {format(breed2)}
-        """
-
-        prompt = f"""
-        context: {context}
-        question: {question}
-        """
-
-        response = generate(prompt)
-        st.write("Response:")
-        st.write(response)
-else:
-    if first and not breed1:
-        st.error(f"No data found for {first}.")
-    if second and not breed2:
-        st.error(f"No data found for {second}.")
-        
+st.write(generate(f"{comparison_data}\n\n\Provide a detailed comparison of these two breeds."))
